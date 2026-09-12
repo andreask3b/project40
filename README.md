@@ -6,7 +6,8 @@
 ## What’s here
 
 - `index.html` — production homepage (EXAMPLE numbers only)
-- `Project40-Free-Teaser.pdf` — free teaser download
+- `styles.css` — Version B light editorial styles
+- `Project40-Free-Teaser.pdf.b64` — free teaser (base64); client JS rebuilds the PDF download
 - Waitlist form is client-side thank-you only (stores nothing on this static site)
 
 ## Rules
@@ -17,7 +18,7 @@
 
 ## Deploy
 
-Static HTML. Deploy root to Vercel (framework: none). Public — no SSO/password on this project.
+Static HTML. Deploy root to Vercel (framework: none). **Must be public** — disable Vercel Authentication / SSO on this project.
 
 ## License
 
