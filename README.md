@@ -6,7 +6,7 @@
 ## What’s here
 
 - `index.html` — production homepage (EXAMPLE numbers only)
-- `week/index.html` — shareable Phase 1 weekly plan template (`/week`) — friend-facing example week, not live logs
+- `week/index.html` — shareable generic weekly plan (`/week`) — friend-facing example week, not live logs
 - `styles.css` — Version B light editorial styles
 - `vercel.json` — `cleanUrls` so `/week` resolves cleanly
 - `Project40-Free-Teaser.pdf.b64` — free teaser (base64); client JS rebuilds the PDF download
@@ -17,7 +17,7 @@
 - EXAMPLE / demo numbers only — not personal training data
 - No deep-links to the private `roadto40` app or personal dashboards
 - Soft CTA: free PDF + waitlist; paid pack later (€49–79 band is EXAMPLE)
-- `/week` is a Phase 1 template for sharing — no live loads, BW/BF, Strava, or private dashboard links
+- `/week` is a generic weekly plan for sharing — no live loads, BW/BF, Strava, or private dashboard links
 
 ## Deploy
 
