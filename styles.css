@@ -302,3 +302,17 @@ footer {
   border-top: 1px solid var(--border);
 }
 footer .mock { color: #A67C00; }
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+.nav-sec {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+.nav-sec:hover {
+  color: var(--charcoal);
+}
