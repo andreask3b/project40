@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Project 40 — Week (Phase 1 template)</title>
-<meta name="description" content="Project 40 Phase 1 weekly plan template — shareable example week. Lifts, bike, pain gate. Not live logs.">
+<title>Project 40 — Week</title>
+<meta name="description" content="Project 40 generic weekly plan — shareable example week. Lifts, bike, recovery. Not live logs.">
 <meta name="robots" content="index,follow">
 <style>
   :root {
@@ -55,20 +55,6 @@
     color: var(--charcoal);
     border-bottom: 2px solid var(--lime);
     padding-bottom: 0.15rem;
-  }
-
-  .nav-links {
-    display: flex; align-items: center; gap: 1.25rem;
-  }
-  .nav-quiet {
-    font-size: 0.8rem; font-weight: 600;
-    color: var(--muted);
-  }
-  .nav-quiet[aria-current="page"] {
-    color: var(--charcoal);
-  }
-  footer .footer-links {
-    display: flex; align-items: center; gap: 1rem;
   }
 
   .page-head {
@@ -122,28 +108,6 @@
     max-width: 52ch;
   }
   .sub-line strong { color: var(--ink); font-weight: 600; }
-
-  .pain-strip {
-    position: sticky;
-    top: 0;
-    z-index: 20;
-    background: var(--white);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    box-shadow: 0 1px 0 rgba(26,29,33,0.04);
-  }
-  .pain-inner {
-    padding: 0.85rem 0;
-  }
-  .pain-label {
-    font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--lime);
-    margin-bottom: 0.35rem;
-  }
-  .pain-rules {
-    font-size: 0.8rem; color: var(--ink); line-height: 1.55;
-  }
-  .pain-rules .sep { color: var(--border); margin: 0 0.35rem; }
 
   .week-sec { padding: 2rem 0 2.5rem; }
   .week-grid {
@@ -302,10 +266,7 @@
 <nav>
   <div class="wrap nav-inner">
     <a href="/" class="logo">Project <span>40</span></a>
-    <div class="nav-links">
-      <a class="nav-quiet" href="/week" aria-current="page">Week</a>
-      <a class="nav-cta" href="/">Home</a>
-    </div>
+    <a class="nav-cta" href="/">Home</a>
   </div>
 </nav>
 
@@ -313,42 +274,21 @@
   <div class="wrap">
     <div class="page-head-top">
       <div>
-        <p class="sec-label">Phase 1 weekly</p>
-        <h1>Project 40 · Fall 2026 regain</h1>
+        <p class="sec-label">Weekly plan</p>
+        <h1>Project 40 · This week</h1>
       </div>
-      <span class="badge-quiet">example / Phase 1 template</span>
+      <span class="badge-quiet">generic plan</span>
     </div>
     <div class="meta-row">
-      <span class="chip chip-lime">ITB-aware</span>
+      <span class="chip chip-lime">Concurrent</span>
       <span class="chip">Min-Max</span>
-      <span class="chip">1–2 hard sets</span>
-      <span class="chip">RIR 0–1</span>
+      <span class="chip">Hard sets · no prescription</span>
       <span class="chip">~40–50 min lifts</span>
     </div>
     <p class="sub-line"><strong>StrengthLog</strong> = lifts · <strong>Apple Fitness / bike</strong> = cardio · <strong>this page</strong> = plan only</p>
   </div>
 </header>
 
-<div class="pain-strip">
-  <div class="wrap pain-inner">
-    <p class="pain-label">Pain gate</p>
-    <p class="pain-rules">
-      Left ITB + LBP · cap ~2–3/10
-      <span class="sep">·</span>
-      left FRONT on split / ATG / Bulgarian
-      <span class="sep">·</span>
-      heel-elevated goblets OK
-      <span class="sep">·</span>
-      no aggressive ITB stretch
-      <span class="sep">·</span>
-      detone hip flexors before lower / after long rides
-      <span class="sep">·</span>
-      stand 15–20 min on long bike
-      <span class="sep">·</span>
-      bike &gt; run for VO<sub>2</sub>
-    </p>
-  </div>
-</div>
 
 <section class="week-sec" aria-label="Week plan">
   <div class="wrap-wide">
@@ -362,7 +302,7 @@
         </div>
         <h3 class="day-title">Full Body A</h3>
         <ul class="day-moves">
-          <li>Heel-elevated goblet squat</li>
+          <li>Goblet squat</li>
           <li>BB bench</li>
           <li>Pendlay row</li>
           <li>RDL</li>
@@ -383,7 +323,7 @@
           <li>2–3 min easy between</li>
           <li>Total ~30–45 min</li>
         </ul>
-        <p class="day-note">Hard aerobic · keep pain under gate</p>
+        <p class="day-note">Hard aerobic · not easy Z2</p>
       </article>
 
       <article class="day-card">
@@ -393,14 +333,14 @@
         </div>
         <h3 class="day-title">Full Body B</h3>
         <ul class="day-moves">
-          <li>Bulgarian split — L-FRONT</li>
+          <li>Bulgarian split squat</li>
           <li>Single-leg RDL</li>
           <li>Pull-up</li>
           <li>BB OHP</li>
           <li>Face pull</li>
           <li>Arms</li>
         </ul>
-        <p class="day-note"><strong>No MAXXUS</strong> this day</p>
+        <p class="day-note"><strong>Pre:</strong> detone + McGill</p>
       </article>
 
       <article class="day-card">
@@ -423,16 +363,16 @@
         </div>
         <h3 class="day-title">Full Body C</h3>
         <ul class="day-moves">
-          <li>ATG split squat — L-FRONT</li>
+          <li>ATG split squat</li>
           <li>Ring dips</li>
           <li>Chin-up</li>
           <li>DB row</li>
-          <li>MAXXUS holds</li>
+          <li>Back extension</li>
           <li>Hammer + OH tri</li>
           <li>Band abd + tib</li>
           <li>Hang</li>
         </ul>
-        <p class="day-note">Min-Max hard sets · stay inside pain gate</p>
+        <p class="day-note">Min-Max hard sets · no load prescription</p>
       </article>
 
       <article class="day-card">
@@ -484,9 +424,9 @@
           <tbody>
             <tr>
               <td>Squat</td>
-              <td>Heel-elev goblet</td>
-              <td>Bulgarian L-FRONT</td>
-              <td>ATG L-FRONT</td>
+              <td>Goblet squat</td>
+              <td>Bulgarian</td>
+              <td>ATG split</td>
             </tr>
             <tr>
               <td>Press</td>
@@ -498,7 +438,7 @@
               <td>Hinge</td>
               <td>RDL</td>
               <td>SL RDL</td>
-              <td>—</td>
+              <td>Back extension</td>
             </tr>
             <tr>
               <td>Pull (vert)</td>
@@ -516,7 +456,7 @@
               <td>Glute med</td>
               <td>—</td>
               <td>—</td>
-              <td>MAXXUS holds · band abd</td>
+              <td>Band abd</td>
             </tr>
             <tr>
               <td>Arms</td>
@@ -531,7 +471,7 @@
   </div>
 </section>
 
-<section class="block-sec" aria-label="Daily and physio" style="padding-bottom:3rem">
+<section class="block-sec" aria-label="Daily and recovery" style="padding-bottom:3rem">
   <div class="wrap two-col">
     <div class="block-card">
       <p class="sec-label">Daily</p>
@@ -544,12 +484,13 @@
       </ul>
     </div>
     <div class="block-card">
-      <p class="sec-label">Physio</p>
-      <h2>Soft tissue only</h2>
-      <p class="lead-sm">Keep it quiet. No aggressive stretching while the gate is active.</p>
+      <p class="sec-label">Recovery</p>
+      <h2>Between sessions</h2>
+      <p class="lead-sm">Keep mobility short. Soft tissue as needed — no marathon stretch sessions.</p>
       <ul class="mini-list">
-        <li>Soft tissue: TFL / glute med / glute max</li>
-        <li>No static stretch for now</li>
+        <li>Light soft tissue if tight</li>
+        <li>Stand often on long rides</li>
+        <li>Hip-flexor detone after lower / long bike</li>
       </ul>
     </div>
   </div>
@@ -557,10 +498,7 @@
 
 <footer class="wrap">
   <a href="/" class="wordmark">Project <span>40</span></a>
-  <div class="footer-links">
-    <a class="home-link" href="/">Home</a>
-    <a class="home-link" href="/week">Week</a>
-  </div>
+  <a class="home-link" href="/">← Home</a>
 </footer>
 
 </body>
