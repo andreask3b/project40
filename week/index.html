@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project 40 — Week (Phase 1 template)</title>
+<meta name="description" content="Project 40 Phase 1 weekly plan template — shareable example week. Lifts, bike, pain gate. Not live logs.">
+<meta name="robots" content="index,follow">
+<style>
+  :root {
+    --cream: #F7F4EC;
+    --white: #FFFFFF;
+    --charcoal: #1A1D21;
+    --ink: #2C3036;
+    --muted: #6B717A;
+    --lime: #7CBA1E;
+    --lime-soft: #E8F5D0;
+    --band: #1A1D21;
+    --border: #E4E0D6;
+    --card: #FFFFFF;
+    --bike: #5B7C99;
+    --bike-soft: #E4ECF2;
+    --rest-soft: #EEEAE0;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Georgia, serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.65;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  .wrap { width: min(920px, 100% - 2rem); margin-inline: auto; }
+  .wrap-wide { width: min(1040px, 100% - 2rem); margin-inline: auto; }
+
+  nav {
+    background: var(--cream);
+    border-bottom: 1px solid var(--border);
+    padding: 1.1rem 0;
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 1rem;
+  }
+  .logo {
+    font-weight: 700; font-size: 1.05rem; letter-spacing: -0.03em;
+    color: var(--charcoal);
+  }
+  .logo span { color: var(--lime); }
+  .nav-cta {
+    font-size: 0.8rem; font-weight: 600;
+    color: var(--charcoal);
+    border-bottom: 2px solid var(--lime);
+    padding-bottom: 0.15rem;
+  }
+
+  .nav-links {
+    display: flex; align-items: center; gap: 1.25rem;
+  }
+  .nav-quiet {
+    font-size: 0.8rem; font-weight: 600;
+    color: var(--muted);
+  }
+  .nav-quiet[aria-current="page"] {
+    color: var(--charcoal);
+  }
+  footer .footer-links {
+    display: flex; align-items: center; gap: 1rem;
+  }
+
+  .page-head {
+    padding: 2.25rem 0 1.5rem;
+  }
+  .page-head-top {
+    display: flex; flex-wrap: wrap; align-items: flex-start;
+    justify-content: space-between; gap: 0.75rem 1.25rem;
+    margin-bottom: 0.85rem;
+  }
+  .sec-label {
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--lime); margin-bottom: 0.5rem;
+  }
+  h1 {
+    font-size: clamp(1.75rem, 5vw, 2.35rem);
+    font-weight: 800; letter-spacing: -0.035em; line-height: 1.15;
+    color: var(--charcoal); margin-bottom: 0.65rem;
+  }
+  .meta-row {
+    display: flex; flex-wrap: wrap; gap: 0.4rem;
+    margin-bottom: 1rem;
+  }
+  .chip {
+    display: inline-flex; align-items: center;
+    font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 0.3rem 0.65rem;
+    border-radius: 999px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    color: var(--ink);
+  }
+  .chip-lime {
+    background: var(--lime-soft);
+    border-color: #C5E08A;
+    color: var(--charcoal);
+  }
+  .badge-quiet {
+    font-size: 0.68rem; font-weight: 600;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    background: var(--white);
+    padding: 0.35rem 0.7rem;
+    border-radius: 8px;
+    white-space: nowrap;
+  }
+  .sub-line {
+    font-size: 0.9rem; color: var(--muted);
+    max-width: 52ch;
+  }
+  .sub-line strong { color: var(--ink); font-weight: 600; }
+
+  .pain-strip {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: var(--white);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 1px 0 rgba(26,29,33,0.04);
+  }
+  .pain-inner {
+    padding: 0.85rem 0;
+  }
+  .pain-label {
+    font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--lime);
+    margin-bottom: 0.35rem;
+  }
+  .pain-rules {
+    font-size: 0.8rem; color: var(--ink); line-height: 1.55;
+  }
+  .pain-rules .sep { color: var(--border); margin: 0 0.35rem; }
+
+  .week-sec { padding: 2rem 0 2.5rem; }
+  .week-grid {
+    display: grid;
+    gap: 0.85rem;
+  }
+  @media (min-width: 768px) {
+    .week-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  }
+
+  .day-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.15rem 1.2rem;
+    display: flex; flex-direction: column; gap: 0.55rem;
+  }
+  .day-top {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 0.5rem;
+  }
+  .day-name {
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--muted);
+  }
+  .type-chip {
+    font-size: 0.65rem; font-weight: 700; letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.22rem 0.55rem;
+    border-radius: 6px;
+  }
+  .type-lift {
+    background: var(--lime-soft);
+    color: #3d6a0e;
+  }
+  .type-bike {
+    background: var(--bike-soft);
+    color: #3a556b;
+  }
+  .type-rest {
+    background: var(--rest-soft);
+    color: var(--muted);
+  }
+  .day-title {
+    font-size: 1.05rem; font-weight: 750; letter-spacing: -0.02em;
+    color: var(--charcoal); line-height: 1.25;
+  }
+  .day-moves {
+    list-style: none;
+    display: flex; flex-direction: column; gap: 0.28rem;
+  }
+  .day-moves li {
+    font-size: 0.875rem; color: var(--ink);
+    padding-left: 0.95rem; position: relative;
+  }
+  .day-moves li::before {
+    content: "·";
+    position: absolute; left: 0.15rem;
+    color: var(--lime); font-weight: 900; font-size: 1.1rem; line-height: 1.2;
+  }
+  .day-note {
+    font-size: 0.8rem; color: var(--muted);
+    border-top: 1px solid var(--border);
+    padding-top: 0.55rem;
+    margin-top: 0.15rem;
+  }
+  .day-note strong { color: var(--ink); font-weight: 600; }
+
+  .block-sec {
+    padding: 0 0 2.5rem;
+  }
+  .block-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem 1.25rem;
+  }
+  @media (min-width: 640px) {
+    .block-card { padding: 1.75rem 1.75rem; }
+  }
+  h2 {
+    font-size: clamp(1.25rem, 3vw, 1.55rem);
+    font-weight: 750; letter-spacing: -0.03em;
+    color: var(--charcoal); margin-bottom: 0.4rem; line-height: 1.25;
+  }
+  .lead-sm {
+    font-size: 0.9rem; color: var(--muted);
+    margin-bottom: 1.15rem; max-width: 48ch;
+  }
+
+  .var-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  table.var {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+    min-width: 520px;
+  }
+  table.var th,
+  table.var td {
+    text-align: left;
+    padding: 0.55rem 0.5rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table.var th {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--muted);
+    background: var(--cream);
+  }
+  table.var th:first-child,
+  table.var td:first-child {
+    font-weight: 650; color: var(--charcoal);
+    white-space: nowrap;
+  }
+  table.var td { color: var(--ink); }
+  table.var tr:last-child td { border-bottom: none; }
+
+  .two-col {
+    display: grid; gap: 1rem;
+  }
+  @media (min-width: 768px) {
+    .two-col { grid-template-columns: 1fr 1fr; gap: 1.15rem; }
+  }
+  .mini-list {
+    list-style: none;
+    display: flex; flex-direction: column; gap: 0.45rem;
+  }
+  .mini-list li {
+    font-size: 0.9rem; color: var(--ink);
+    padding: 0.65rem 0.85rem;
+    background: var(--cream);
+    border-radius: 10px;
+    border-left: 3px solid var(--lime);
+  }
+
+  footer {
+    padding: 2rem 0 3rem;
+    font-size: 0.8rem; color: var(--muted);
+    display: flex; flex-wrap: wrap; justify-content: space-between;
+    align-items: center; gap: 0.75rem;
+    border-top: 1px solid var(--border);
+  }
+  footer .wordmark {
+    font-weight: 700; color: var(--charcoal); letter-spacing: -0.02em;
+  }
+  footer .wordmark span { color: var(--lime); }
+  footer a.home-link {
+    font-weight: 600; color: var(--charcoal);
+    border-bottom: 2px solid var(--lime);
+    padding-bottom: 0.1rem;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a href="/" class="logo">Project <span>40</span></a>
+    <div class="nav-links">
+      <a class="nav-quiet" href="/week" aria-current="page">Week</a>
+      <a class="nav-cta" href="/">Home</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="wrap">
+    <div class="page-head-top">
+      <div>
+        <p class="sec-label">Phase 1 weekly</p>
+        <h1>Project 40 · Fall 2026 regain</h1>
+      </div>
+      <span class="badge-quiet">example / Phase 1 template</span>
+    </div>
+    <div class="meta-row">
+      <span class="chip chip-lime">ITB-aware</span>
+      <span class="chip">Min-Max</span>
+      <span class="chip">1–2 hard sets</span>
+      <span class="chip">RIR 0–1</span>
+      <span class="chip">~40–50 min lifts</span>
+    </div>
+    <p class="sub-line"><strong>StrengthLog</strong> = lifts · <strong>Apple Fitness / bike</strong> = cardio · <strong>this page</strong> = plan only</p>
+  </div>
+</header>
+
+<div class="pain-strip">
+  <div class="wrap pain-inner">
+    <p class="pain-label">Pain gate</p>
+    <p class="pain-rules">
+      Left ITB + LBP · cap ~2–3/10
+      <span class="sep">·</span>
+      left FRONT on split / ATG / Bulgarian
+      <span class="sep">·</span>
+      heel-elevated goblets OK
+      <span class="sep">·</span>
+      no aggressive ITB stretch
+      <span class="sep">·</span>
+      detone hip flexors before lower / after long rides
+      <span class="sep">·</span>
+      stand 15–20 min on long bike
+      <span class="sep">·</span>
+      bike &gt; run for VO<sub>2</sub>
+    </p>
+  </div>
+</div>
+
+<section class="week-sec" aria-label="Week plan">
+  <div class="wrap-wide">
+    <p class="sec-label" style="margin-bottom:0.75rem">This week</p>
+    <div class="week-grid">
+
+      <article class="day-card">
+        <div class="day-top">
+          <span class="day-name">Mon</span>
+          <span class="type-chip type-lift">Lift</span>
+        </div>
+        <h3 class="day-title">Full Body A</h3>
+        <ul class="day-moves">
+          <li>Heel-elevated goblet squat</li>
+          <li>BB bench</li>
+          <li>Pendlay row</li>
+          <li>RDL</li>
+          <li>Lateral raises</li>
+          <li>Curl + tri</li>
+        </ul>
+        <p class="day-note"><strong>Pre:</strong> detone + McGill</p>
+      </article>
+
+      <article class="day-card">
+        <div class="day-top">
+          <span class="day-name">Tue</span>
+          <span class="type-chip type-bike">Bike</span>
+        </div>
+        <h3 class="day-title">Bike VO<sub>2</sub></h3>
+        <ul class="day-moves">
+          <li>4×4 min HR ~150–170</li>
+          <li>2–3 min easy between</li>
+          <li>Total ~30–45 min</li>
+        </ul>
+        <p class="day-note">Hard aerobic · keep pain under gate</p>
+      </article>
+
+      <article class="day-card">
+        <div class="day-top">
+          <span class="day-name">Wed</span>
+          <span class="type-chip type-lift">Lift</span>
+        </div>
+        <h3 class="day-title">Full Body B</h3>
+        <ul class="day-moves">
+          <li>Bulgarian split — L-FRONT</li>
+          <li>Single-leg RDL</li>
+          <li>Pull-up</li>
+          <li>BB OHP</li>
+          <li>Face pull</li>
+          <li>Arms</li>
+        </ul>
+        <p class="day-note"><strong>No MAXXUS</strong> this day</p>
+      </article>
+
+      <article class="day-card">
+        <div class="day-top">
+          <span class="day-name">Thu</span>
+          <span class="type-chip type-bike">Bike</span>
+        </div>
+        <h3 class="day-title">Easy Z2 bike</h3>
+        <ul class="day-moves">
+          <li>30–60 min optional</li>
+          <li>Sub-~140 HR</li>
+        </ul>
+        <p class="day-note">Skip if legs need it · recovery first</p>
+      </article>
+
+      <article class="day-card">
+        <div class="day-top">
+          <span class="day-name">Fri</span>
+          <span class="type-chip type-lift">Lift</span>
+        </div>
+        <h3 class="day-title">Full Body C</h3>
+        <ul class="day-moves">
+          <li>ATG split squat — L-FRONT</li>
+          <li>Ring dips</li>
+          <li>Chin-up</li>
+          <li>DB row</li>
+          <li>MAXXUS holds</li>
+          <li>Hammer + OH tri</li>
+          <li>Band abd + tib</li>
+          <li>Hang</li>
+        </ul>
+        <p class="day-note">Min-Max hard sets · stay inside pain gate</p>
+      </article>
+
+      <article class="day-card">
+        <div class="day-top">
+          <span class="day-name">Sat</span>
+          <span class="type-chip type-bike">Bike</span>
+        </div>
+        <h3 class="day-title">Long Z2</h3>
+        <ul class="day-moves">
+          <li>75–180+ min</li>
+          <li>Stand often (15–20 min blocks)</li>
+        </ul>
+        <p class="day-note"><strong>Post:</strong> detone · fuel if &gt;2h</p>
+      </article>
+
+      <article class="day-card" style="grid-column: 1 / -1; max-width: 100%;">
+        <div class="day-top">
+          <span class="day-name">Sun</span>
+          <span class="type-chip type-rest">Rest</span>
+        </div>
+        <h3 class="day-title">Rest</h3>
+        <ul class="day-moves">
+          <li>McGill + mobility</li>
+          <li>Evening hip-flexor detone</li>
+        </ul>
+        <p class="day-note">No loading · tissue reset</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="block-sec" aria-label="Variety locks">
+  <div class="wrap">
+    <div class="block-card">
+      <p class="sec-label">Variety locks</p>
+      <h2>A / B / C pattern</h2>
+      <p class="lead-sm">Same movement slots, different tools — keeps the week balanced without reinventing each session.</p>
+      <div class="var-table-wrap">
+        <table class="var">
+          <thead>
+            <tr>
+              <th>Slot</th>
+              <th>A (Mon)</th>
+              <th>B (Wed)</th>
+              <th>C (Fri)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Squat</td>
+              <td>Heel-elev goblet</td>
+              <td>Bulgarian L-FRONT</td>
+              <td>ATG L-FRONT</td>
+            </tr>
+            <tr>
+              <td>Press</td>
+              <td>BB bench</td>
+              <td>BB OHP</td>
+              <td>Ring dips</td>
+            </tr>
+            <tr>
+              <td>Hinge</td>
+              <td>RDL</td>
+              <td>SL RDL</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Pull (vert)</td>
+              <td>—</td>
+              <td>Pull-up</td>
+              <td>Chin-up</td>
+            </tr>
+            <tr>
+              <td>Horiz pull</td>
+              <td>Pendlay</td>
+              <td>Face pull</td>
+              <td>DB row</td>
+            </tr>
+            <tr>
+              <td>Glute med</td>
+              <td>—</td>
+              <td>—</td>
+              <td>MAXXUS holds · band abd</td>
+            </tr>
+            <tr>
+              <td>Arms</td>
+              <td>Curl + tri</td>
+              <td>Arms</td>
+              <td>Hammer + OH tri · tib · hang</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block-sec" aria-label="Daily and physio" style="padding-bottom:3rem">
+  <div class="wrap two-col">
+    <div class="block-card">
+      <p class="sec-label">Daily</p>
+      <h2>Core minimum</h2>
+      <p class="lead-sm">Every day, including rest — short and non-negotiable.</p>
+      <ul class="mini-list">
+        <li>McGill Big 3</li>
+        <li>Star plank × 10</li>
+        <li>Side plank 30s / side</li>
+      </ul>
+    </div>
+    <div class="block-card">
+      <p class="sec-label">Physio</p>
+      <h2>Soft tissue only</h2>
+      <p class="lead-sm">Keep it quiet. No aggressive stretching while the gate is active.</p>
+      <ul class="mini-list">
+        <li>Soft tissue: TFL / glute med / glute max</li>
+        <li>No static stretch for now</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <a href="/" class="wordmark">Project <span>40</span></a>
+  <div class="footer-links">
+    <a class="home-link" href="/">Home</a>
+    <a class="home-link" href="/week">Week</a>
+  </div>
+</footer>
+
+</body>
+</html>
