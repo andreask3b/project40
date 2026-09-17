@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Project 40 — Look fit AND be fit</title>
-<meta name="description" content="Project 40: a quieter path from 37 → 40. Free teaser PDF, waitlist. Faceless fitness for people who bike, lift, and train after the day is done.">
+<meta name="description" content="Project 40: pick a peak date, reverse-plan the seasons. Free teaser PDF, waitlist. Faceless fitness for people who bike, lift, and train after the day is done.">
 <meta name="robots" content="index,follow">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<div class="banner"><strong>EXAMPLE</strong> numbers only · Soft launch · Free PDF · No payment</div>
+<div class="banner"><strong>EXAMPLE</strong> goal date · Soft launch · Free PDF · No payment</div>
 
 <nav>
   <div class="wrap nav-inner">
@@ -24,10 +24,46 @@
 
 <header class="hero">
   <div class="wrap">
-    <p class="hero-kicker">A faceless fitness lead magnet</p>
+    <p class="hero-kicker">A training system with an end date</p>
     <h1>Project 40</h1>
     <p class="north">Look fit AND be fit.</p>
-    <p class="story">37 → 40 without living in the gym. A quieter path for people who bike, lift, and train after the day is done — and want proof that isn’t a face on Instagram.</p>
+    <p class="story">
+      Pick a peak date. Reverse-plan the seasons that get you there —
+      like marathon prep, not a vague “someday.”
+    </p>
+    <div class="age-frame">
+      <span>37</span>
+      <span class="arrow">→</span>
+      <span>40</span>
+      <span class="hint">generic age horizon · product idea</span>
+    </div>
+
+    <div class="countdown-card" aria-label="Example goal date countdown">
+      <p class="label">Your goal date</p>
+      <div class="date-field-mock">
+        <span class="field-label">Peak / end date (you choose)</span>
+        <div class="field">
+          <span>15.06.2028</span>
+          <span class="ex">EXAMPLE</span>
+        </div>
+      </div>
+      <div class="days-row">
+        <span class="days-num">637</span>
+        <span class="days-unit">days remaining</span>
+      </div>
+      <p class="days-note">
+        <strong>EXAMPLE</strong> countdown from a fictional horizon —
+        not a fixed product end date. You set yours.
+      </p>
+      <div class="roadmap-mini" aria-hidden="true">
+        <span class="rm-node now">Now</span>
+        <span class="rm-dash"></span>
+        <span class="rm-node">Seasons</span>
+        <span class="rm-dash"></span>
+        <span class="rm-node goal">Goal date</span>
+      </div>
+    </div>
+
     <div class="cta-stack">
       <a class="btn btn-primary" href="Project40-Free-Teaser.pdf" id="download">Download free PDF <span class="lime">↓</span></a>
       <form class="wait-row" id="waitlist-hero" action="#waitlist" method="get">
@@ -35,14 +71,14 @@
         <button type="submit" class="btn-soft">Join waitlist</button>
       </form>
       <p class="fine" id="thanks-hero" hidden>You’re on the list — thank you. Nothing stored on this page yet.</p>
-      <p class="fine">Soft CTA · no Stripe · EXAMPLE numbers only</p>
+      <p class="fine">Soft CTA · no Stripe · EXAMPLE goal date only</p>
     </div>
   </div>
 </header>
 
 <div class="band">
   <div class="wrap">
-    <p>The teaser is the <em>map</em>. The seasons are the rhythm. The numbers — when you’re ready — are the proof.</p>
+    <p>Choose the date. Work <em>backward</em>. Seasons fill the gap — not the other way around.</p>
   </div>
 </div>
 
@@ -63,56 +99,72 @@
   </div>
 </section>
 
-<section id="roadmap" style="padding-top:0">
+<section id="roadmap">
   <div class="wrap">
-    <p class="sec-label">Roadmap idea</p>
-    <h2>A dated horizon. Capacity as a story.</h2>
-    <p class="lead">EXAMPLE illustration only — a bar toward 26.03.2029 and a few capacity chips. Not a prescription. Not your numbers until you make them yours.</p>
-    <div class="roadmap-illust">
-      <div class="horizon-label">
-        <span>Where you are</span>
-        <span>Horizon · <strong>26.03.2029</strong></span>
-      </div>
-      <div class="simple-bar" role="presentation"><div class="simple-fill"></div></div>
-      <div class="cap-row">
-        <div class="cap"><b>VO₂</b> ~50 <span class="to">→</span> 60</div>
-        <div class="cap"><b>BF</b> ~19% <span class="to">→</span> &lt;12% peak</div>
-        <div class="cap"><b>Mode</b> bike + lift · evenings</div>
+    <p class="sec-label">Reverse-plan</p>
+    <h2>Now → seasons → goal date</h2>
+    <p class="lead">
+      Like race prep: lock a peak day, then schedule FALL regain, WINTER build,
+      SPRING lean, and SUMMER peak so you arrive ready — not surprised.
+    </p>
+
+    <div class="timeline">
+      <div class="timeline-track">
+        <div class="tl-step now">
+          <div class="tl-name">Now</div>
+          <div class="tl-sub">Start where you are</div>
+        </div>
+        <div class="tl-step">
+          <div class="tl-name">Fall</div>
+          <div class="tl-sub">Regain</div>
+        </div>
+        <div class="tl-step">
+          <div class="tl-name">Winter</div>
+          <div class="tl-sub">Build</div>
+        </div>
+        <div class="tl-step">
+          <div class="tl-name">Spring</div>
+          <div class="tl-sub">Lean</div>
+        </div>
+        <div class="tl-step">
+          <div class="tl-name">Summer</div>
+          <div class="tl-sub">Peak</div>
+        </div>
+        <div class="tl-step goal">
+          <div class="tl-name">Goal date</div>
+          <div class="tl-sub">Your peak day</div>
+          <span class="tl-ex">EXAMPLE · 15.06.2028</span>
+        </div>
       </div>
     </div>
-  </div>
-</section>
 
-<section id="seasons" style="background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
-  <div class="wrap-wide" style="width:min(1000px,100% - 2.5rem);margin-inline:auto">
-    <p class="sec-label">Four seasons</p>
-    <h2>One year. Four chapters.</h2>
-    <p class="lead">Print-teaser energy: each season gets a clear job. No living in the gym — living in a rhythm you can keep.</p>
-    <div class="season-stack">
-      <article class="season-card">
-        <p class="num">01 · Fall</p>
-        <h3>Regain</h3>
-        <p>Come back without ego. Close the gaps. Make consistency the first win so winter has something to build on.</p>
-        <span class="tag">Consistency over intensity</span>
+    <div class="season-grid">
+      <article class="season">
+        <p class="tag">Season 1</p>
+        <h3>FALL — Regain</h3>
+        <p>Re-establish consistency. Rebuild base hours and habits after the summer drift.</p>
       </article>
-      <article class="season-card">
-        <p class="num">02 · Winter</p>
-        <h3>Build + Z2</h3>
-        <p>Quiet volume. Aerobic base and strength density you can recover from — the unglamorous engine room of the year.</p>
-        <span class="tag">Base that holds</span>
+      <article class="season">
+        <p class="tag">Season 2</p>
+        <h3>WINTER — Build</h3>
+        <p>Strength and aerobic volume. Quiet gains that show up later.</p>
       </article>
-      <article class="season-card">
-        <p class="num">03 · Spring</p>
-        <h3>Lean</h3>
-        <p>Sharpen composition while protecting the capacity you earned. Less noise, cleaner fueling, same work ethic.</p>
-        <span class="tag">Composition with restraint</span>
+      <article class="season">
+        <p class="tag">Season 3</p>
+        <h3>SPRING — Lean</h3>
+        <p>Sharpen composition and economy. Cut noise; keep power.</p>
       </article>
-      <article class="season-card">
-        <p class="num">04 · Summer</p>
-        <h3>Intervals + max lean</h3>
-        <p>Peak stimulus when the base can take it. Faceless metrics optional to share — required to believe.</p>
-        <span class="tag">Proof season</span>
+      <article class="season">
+        <p class="tag">Season 4</p>
+        <h3>SUMMER — Peak</h3>
+        <p>Arrive at your goal date fit to look at and fit to perform.</p>
       </article>
+    </div>
+
+    <div class="chips" aria-label="Example capacity markers">
+      <span class="chip">VO₂ capacity <span class="ex">EXAMPLE</span></span>
+      <span class="chip">Strength floor <span class="ex">EXAMPLE</span></span>
+      <span class="chip">Lean target <span class="ex">EXAMPLE</span></span>
     </div>
   </div>
 </section>
@@ -175,7 +227,7 @@
 
 <footer class="wrap">
   <span>Project 40 · Look fit AND be fit · <a href="/week" style="color:inherit;border-bottom:1px solid #7CBA1E;text-decoration:none;font-weight:600">Week</a></span>
-  <span>EXAMPLE data only · Public homepage · Separate from private training logs</span>
+  <span>EXAMPLE goal date 15.06.2028 · Public homepage · Separate from private training logs</span>
 </footer>
 
 <script>
