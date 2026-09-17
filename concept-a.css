@@ -1,0 +1,170 @@
+/* Concept A — countdown-forward */
+.age-frame {
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 999px; padding: 0.4rem 1rem;
+  font-size: 0.85rem; font-weight: 600; color: var(--charcoal);
+  margin-bottom: 2rem;
+}
+.age-frame .arrow { color: var(--lime); font-weight: 800; }
+.age-frame .hint { font-weight: 500; color: var(--muted); font-size: 0.78rem; }
+
+.countdown-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  padding: 1.75rem 1.5rem 1.5rem;
+  max-width: 520px;
+  margin: 0 auto 2.5rem;
+  text-align: left;
+  box-shadow: 0 8px 28px rgba(26, 29, 33, 0.05);
+}
+.countdown-card .label {
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--lime); margin-bottom: 0.75rem;
+}
+.date-field-mock {
+  display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.25rem;
+}
+.date-field-mock .field-label {
+  font-size: 0.8rem; font-weight: 600; color: var(--muted);
+}
+.date-field-mock .field {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.95rem 1.1rem;
+  border: 1.5px solid var(--border);
+  border-radius: 0.75rem;
+  background: var(--cream);
+  font-size: 1.15rem; font-weight: 700; color: var(--charcoal);
+  letter-spacing: -0.02em;
+}
+.date-field-mock .field .ex {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--lime);
+  background: var(--lime-soft); padding: 0.25rem 0.5rem; border-radius: 999px;
+}
+.days-row {
+  display: flex; align-items: baseline; gap: 0.65rem; flex-wrap: wrap;
+  margin-bottom: 0.85rem;
+}
+.days-num {
+  font-size: clamp(2.8rem, 8vw, 3.6rem);
+  font-weight: 800; letter-spacing: -0.05em; line-height: 1;
+  color: var(--charcoal);
+}
+.days-unit {
+  font-size: 1rem; font-weight: 600; color: var(--muted);
+}
+.days-note {
+  font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem;
+}
+.days-note strong { color: var(--ink); font-weight: 600; }
+
+.roadmap-mini {
+  display: flex; align-items: center; gap: 0.35rem; flex-wrap: wrap;
+  padding-top: 1rem; border-top: 1px solid var(--border);
+}
+.rm-node {
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.04em;
+  text-transform: uppercase; color: var(--muted);
+}
+.rm-node.now { color: var(--charcoal); }
+.rm-node.goal {
+  color: var(--charcoal); background: var(--lime-soft);
+  padding: 0.2rem 0.45rem; border-radius: 999px;
+}
+.rm-dash {
+  flex: 1 1 12px; height: 2px; min-width: 10px;
+  background: linear-gradient(90deg, var(--border), var(--lime));
+  border-radius: 1px;
+}
+
+.timeline {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.5rem 1.25rem;
+  margin-bottom: 2rem;
+}
+.timeline-track {
+  display: flex; align-items: stretch; gap: 0;
+  overflow-x: auto; padding-bottom: 0.25rem;
+}
+.tl-step {
+  flex: 1 1 0; min-width: 88px;
+  text-align: center; position: relative;
+  padding: 0 0.35rem;
+}
+.tl-step::before {
+  content: "";
+  display: block; width: 10px; height: 10px; border-radius: 50%;
+  background: var(--border); margin: 0 auto 0.65rem;
+  border: 2px solid var(--white); box-shadow: 0 0 0 2px var(--border);
+}
+.tl-step.goal::before {
+  background: var(--lime); box-shadow: 0 0 0 2px var(--lime);
+}
+.tl-step.now::before {
+  background: var(--charcoal); box-shadow: 0 0 0 2px var(--charcoal);
+}
+.tl-step:not(:last-child)::after {
+  content: "";
+  position: absolute; top: 4px; left: calc(50% + 8px); right: calc(-50% + 8px);
+  height: 2px; background: var(--border); z-index: 0;
+}
+.tl-step.goal:not(:last-child)::after,
+.tl-step.now:not(:last-child)::after { background: #C5E08A; }
+.tl-name {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--charcoal); margin-bottom: 0.2rem;
+}
+.tl-sub { font-size: 0.7rem; color: var(--muted); line-height: 1.3; }
+.tl-ex {
+  display: inline-block; margin-top: 0.35rem;
+  font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--lime);
+}
+
+.season-grid {
+  display: grid; gap: 0.85rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 640px) {
+  .season-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 900px) {
+  .season-grid { grid-template-columns: repeat(4, 1fr); }
+}
+.season {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 0.85rem;
+  padding: 1.15rem 1rem;
+}
+.season .tag {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--lime); margin-bottom: 0.4rem;
+}
+.season h3 {
+  font-size: 1.05rem; font-weight: 700; color: var(--charcoal);
+  letter-spacing: -0.02em; margin-bottom: 0.35rem;
+}
+.season p { font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+
+.chips {
+  display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.75rem;
+}
+.chip {
+  font-size: 0.78rem; font-weight: 600;
+  padding: 0.4rem 0.75rem; border-radius: 999px;
+  background: var(--lime-soft); color: var(--charcoal);
+  border: 1px solid #C5E08A;
+}
+.chip .ex {
+  font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--muted); margin-left: 0.35rem;
+}
+
+.hero { padding: 3.5rem 0 2.5rem; }
+.story { max-width: 42ch; }
