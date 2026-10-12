@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project 40 — Waitlist</title>
+<meta name="description" content="Join the Project 40 waitlist. Email only. Soft launch, free teaser PDF, no payment.">
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/concept-a.css">
+</head>
+<body>
+
+<div class="banner"><strong>EXAMPLE</strong> · Soft launch · Free PDF · No payment</div>
+
+<nav>
+  <div class="wrap nav-inner">
+    <div class="nav-brand">
+      <a href="/" class="logo">Project <span>40</span></a>
+      <a class="nav-sec" href="/waitlist">Waitlist</a>
+      <a class="nav-sec" href="/week">Week</a>
+    </div>
+    <a class="nav-cta" href="#download">Download free PDF</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="hero-kicker">Soft launch</p>
+    <h1>Waitlist</h1>
+    <p class="north">Look fit AND be fit.</p>
+    <p class="story">
+      Leave an email. The paid pack comes after real logged weeks — not before.
+      Nothing is charged on this page.
+    </p>
+    <form class="wait-row" id="waitlist-form" action="/api/waitlist" method="post">
+      <input type="email" name="email" placeholder="Email" aria-label="Email" required autocomplete="email" inputmode="email">
+      <button type="submit" class="btn-soft">Join waitlist</button>
+    </form>
+    <p class="fine" id="thanks" hidden>You’re on the list — thank you.</p>
+    <p class="fine form-error" id="waitlist-error" hidden role="alert">Couldn’t save that just now. Try again in a moment.</p>
+    <p class="fine">Soft CTA · no Stripe · no hard sell</p>
+  </div>
+</header>
+
+<div class="band">
+  <div class="wrap">
+    <p>Faceless on purpose. Share proof, keep identity. <em>No hard sell.</em></p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap" style="text-align:center">
+    <p class="sec-label">Free map</p>
+    <h2>Start with the teaser.</h2>
+    <p class="lead" style="margin-inline:auto">The PDF is the map. The waitlist is for when the weeks are real.</p>
+    <a class="btn btn-primary" href="/Project40-Free-Teaser.pdf" id="download">Download free PDF <span class="lime">↓</span></a>
+    <p class="fine"><a href="/" style="border-bottom:1px solid #7CBA1E;font-weight:600">Back to Project 40</a></p>
+  </div>
+</section>
+
+<footer class="wrap">
+  <span>Project 40 · Look fit AND be fit · <a href="/week" style="color:inherit;border-bottom:1px solid #7CBA1E;text-decoration:none;font-weight:600">Week</a></span>
+  <span>Public waitlist · Separate from private training logs</span>
+</footer>
+
+<script>
+(function () {
+  var form = document.getElementById('waitlist-form');
+  var thanks = document.getElementById('thanks');
+  var error = document.getElementById('waitlist-error');
+  if (!form) return;
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var input = form.querySelector('input[type="email"]');
+    var button = form.querySelector('button');
+    var email = (input && input.value) || '';
+    if (!email.trim()) return;
+    if (error) error.hidden = true;
+    if (button) button.disabled = true;
+    fetch('/api/waitlist', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email })
+    }).then(function (res) {
+      if (!res.ok) throw new Error('save failed');
+      form.hidden = true;
+      if (thanks) thanks.hidden = false;
+    }).catch(function () {
+      if (error) error.hidden = false;
+      if (button) button.disabled = false;
+    });
+  });
+})();
+</script>
+
+<script>
+(function () {
+  function downloadPdf(e) {
+    if (e) e.preventDefault();
+    fetch('/Project40-Free-Teaser.pdf.b64')
+      .then(function (r) { return r.text(); })
+      .then(function (b64) {
+        var bin = atob(b64.trim());
+        var bytes = new Uint8Array(bin.length);
+        for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+        var url = URL.createObjectURL(new Blob([bytes], { type: 'application/pdf' }));
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = 'Project40-Free-Teaser.pdf';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        setTimeout(function () { URL.revokeObjectURL(url); }, 1500);
+      })
+      .catch(function () { window.location.href = '/Project40-Free-Teaser.pdf'; });
+  }
+  document.querySelectorAll('a[href="/Project40-Free-Teaser.pdf"]').forEach(function (el) {
+    el.addEventListener('click', downloadPdf);
+  });
+})();
+</script>
+
+</body>
+</html>

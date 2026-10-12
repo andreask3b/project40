@@ -56,6 +56,7 @@
     border-bottom: 2px solid var(--lime);
     padding-bottom: 0.15rem;
   }
+  .nav-links { display: flex; align-items: center; gap: 1rem; }
 
   .page-head {
     padding: 2.25rem 0 1.5rem;
@@ -266,7 +267,10 @@
 <nav>
   <div class="wrap nav-inner">
     <a href="/" class="logo">Project <span>40</span></a>
-    <a class="nav-cta" href="/">Home</a>
+    <span class="nav-links">
+      <a class="nav-cta" href="/waitlist">Waitlist</a>
+      <a class="nav-cta" href="/">Home</a>
+    </span>
   </div>
 </nav>
 

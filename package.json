@@ -1,0 +1,12 @@
+{
+  "name": "project40",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "build": "node --check api/waitlist.js && node --check lib/email.js && node --check lib/waitlist-store.js && node --check lib/rate-limit.js && node --check scripts/waitlist-admin.mjs && node --test"
+  },
+  "dependencies": {
+    "@vercel/blob": "2.8.0"
+  }
+}

@@ -17,6 +17,7 @@
   <div class="wrap nav-inner">
     <div class="nav-brand">
       <a href="/" class="logo">Project <span>40</span></a>
+      <a class="nav-sec" href="/waitlist">Waitlist</a>
       <a class="nav-sec" href="/week">Week</a>
     </div>
     <a class="nav-cta" href="#download">Download free PDF</a>
@@ -67,11 +68,7 @@
 
     <div class="cta-stack">
       <a class="btn btn-primary" href="Project40-Free-Teaser.pdf" id="download">Download free PDF <span class="lime">↓</span></a>
-      <form class="wait-row" id="waitlist-hero" action="#waitlist" method="get">
-        <input type="email" name="email" placeholder="Email for waitlist" aria-label="Email" required autocomplete="email">
-        <button type="submit" class="btn-soft">Join waitlist</button>
-      </form>
-      <p class="fine" id="thanks-hero" hidden>You’re on the list — thank you. Nothing stored on this page yet.</p>
+      <a class="btn-soft" href="/waitlist">Join waitlist</a>
       <p class="fine">Soft CTA · no Stripe · EXAMPLE goal date only</p>
     </div>
   </div>
@@ -204,11 +201,7 @@
       <p class="lead">Download the teaser PDF first. The waitlist is for people who’ve already started logging — not for a hard sell on day one.</p>
       <div class="cta-stack" style="align-items:flex-start">
         <a class="btn btn-primary" href="Project40-Free-Teaser.pdf">Download free PDF ↓</a>
-        <form class="wait-row" id="waitlist-close" style="justify-content:flex-start;max-width:420px" action="#waitlist" method="get">
-          <input type="email" name="email" placeholder="you@email.com" aria-label="Email" required autocomplete="email">
-          <button type="submit" class="btn-soft">Join waitlist</button>
-        </form>
-        <p class="fine" id="thanks-close" hidden style="color:#9AA0A8">You’re on the list — thank you. Nothing stored on this page yet.</p>
+        <a class="btn-soft" href="/waitlist">Join waitlist</a>
         <p class="fine" style="color:#6B717A">Soft CTA · no payment · no hard sell</p>
       </div>
     </div>
@@ -230,25 +223,6 @@
   <span>Project 40 · Look fit AND be fit · <a href="/week" style="color:inherit;border-bottom:1px solid #7CBA1E;text-decoration:none;font-weight:600">Week</a></span>
   <span>EXAMPLE goal date 15.06.2028 · Public homepage · Separate from private training logs</span>
 </footer>
-
-<script>
-(function () {
-  function wire(formId, thanksId) {
-    var form = document.getElementById(formId);
-    var thanks = document.getElementById(thanksId);
-    if (!form) return;
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var email = (form.querySelector('input[type="email"]') || {}).value || '';
-      if (!email.trim()) return;
-      form.hidden = true;
-      if (thanks) thanks.hidden = false;
-    });
-  }
-  wire('waitlist-hero', 'thanks-hero');
-  wire('waitlist-close', 'thanks-close');
-})();
-</script>
 
 <script>
 (function () {

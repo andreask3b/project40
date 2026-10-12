@@ -11,7 +11,8 @@
 - `styles.css` — Version B light editorial + Concept A countdown/timeline classes
 - `vercel.json` — `cleanUrls` so `/week` resolves cleanly
 - `Project40-Free-Teaser.pdf.b64` — free teaser (base64); client JS rebuilds the PDF download
-- Waitlist form is client-side thank-you only (stores nothing on this static site)
+- `/waitlist` — email-only signup. `POST /api/waitlist` appends `{ email, at }` to a private Vercel Blob list (`project40-waitlist`). The response never includes stored emails.
+- Homepage soft CTAs link to `/waitlist`. No Stripe. No outbound email.
 
 ## Goal date (EXAMPLE only)
 
@@ -30,7 +31,14 @@
 
 ## Deploy
 
-Static HTML. Deploy root to Vercel (framework: none). **Must be public** — disable Vercel Authentication / SSO on this project.
+Static HTML plus `api/waitlist.js`. Deploy root to Vercel (framework: none). **Must be public** — leave Vercel Authentication / SSO off on project `project40`.
+
+`BLOB_READ_WRITE_TOKEN` is a server-side env var on Vercel project `project40` (team `andreask3bs-projects`), created with the private Blob store `project40-waitlist`. Do not commit it. To check or remove one address without printing the list:
+
+```bash
+BLOB_READ_WRITE_TOKEN=… node scripts/waitlist-admin.mjs person@example.com check
+BLOB_READ_WRITE_TOKEN=… node scripts/waitlist-admin.mjs person@example.com remove
+```
 
 ## License
 

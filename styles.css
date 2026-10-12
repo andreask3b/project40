@@ -103,11 +103,15 @@ h1 {
 .wait-row input:focus { outline: 2px solid var(--lime); border-color: transparent; }
 .wait-row input::placeholder { color: #9AA0A8; }
 .btn-soft {
+  display: inline-flex; align-items: center; justify-content: center;
   background: var(--lime-soft); color: var(--charcoal);
   border: 1px solid #C5E08A;
   border-radius: 999px; padding: 0.75rem 1.2rem;
   font-size: 0.875rem; font-weight: 600; font-family: inherit;
+  cursor: pointer; text-decoration: none;
 }
+.btn-soft:hover { filter: brightness(0.98); }
+.form-error { color: #8C3A32; }
 .fine {
   font-size: 0.75rem; color: var(--muted); margin-top: 0.5rem;
 }
