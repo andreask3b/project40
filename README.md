@@ -8,6 +8,7 @@
 
 - `index.html` — production homepage (Concept A goal-date countdown)
 - `week/index.html` — shareable generic weekly plan (`/week`) — friend-facing example week, not live logs
+- `stress/index.html` — general notes on stress around 40 (`/stress`) — sleep, recovery, work load, movement, habits; not medical advice
 - `styles.css` — Version B light editorial + Concept A countdown/timeline classes
 - `vercel.json` — `cleanUrls` so `/week` resolves cleanly
 - `Project40-Free-Teaser.pdf.b64` — free teaser (base64); client JS rebuilds the PDF download

@@ -310,8 +310,33 @@ footer .mock { color: #A67C00; }
 .nav-brand {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 1.1rem;
 }
+.section-cta { margin-top: 1.5rem; }
+.disclaimer {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 1rem;
+  max-width: 52ch;
+}
+.note-card {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  border-left: 3px solid var(--lime);
+  padding: 1.15rem 1.2rem;
+}
+.note-card h3 {
+  font-size: 1.05rem;
+  color: var(--charcoal);
+  margin-bottom: 0.45rem;
+}
+.note-card p { color: var(--muted); font-size: 0.95rem; }
+.page-hero { padding: 3rem 0 1.25rem; }
+.page-hero h1 { font-size: clamp(2.2rem, 6vw, 3.2rem); margin-bottom: 0.75rem; }
+.page-hero .north { margin-bottom: 0.75rem; }
+.page-hero .story { margin: 0; max-width: 42ch; }
 .nav-sec {
   font-size: 0.8rem;
   font-weight: 600;
