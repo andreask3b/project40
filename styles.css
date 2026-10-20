@@ -362,9 +362,9 @@ footer .mock { color: #A67C00; }
 .life-chart-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 .life-grid {
   display: grid;
-  grid-template-columns: 4.6rem repeat(4, minmax(4.4rem, 1fr));
+  grid-template-columns: 4.6rem repeat(5, minmax(3.9rem, 1fr));
   gap: 0.32rem;
-  min-width: 480px;
+  min-width: 560px;
 }
 .lg-corner { display: block; }
 .lg-col {
