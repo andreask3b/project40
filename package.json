@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "test": "node --test",
-    "build": "node --check api/waitlist.js && node --check lib/email.js && node --check lib/waitlist-store.js && node --check lib/rate-limit.js && node --check scripts/waitlist-admin.mjs && node --test && rm -rf public && mkdir -p public && cp index.html styles.css concept-a.css Project40-Free-Teaser.pdf.b64 public/ && cp -r week waitlist public/"
+    "build": "node --check api/waitlist.js && node --check lib/email.js && node --check lib/waitlist-store.js && node --check lib/rate-limit.js && node --check scripts/waitlist-admin.mjs && node --test && rm -rf public && mkdir -p public && cp index.html styles.css concept-a.css Project40-Free-Teaser.pdf.b64 public/ && cp -r week waitlist stress public/"
   },
   "dependencies": {
     "@vercel/blob": "2.8.0"
